@@ -7,7 +7,7 @@
 
       var iframeWidth = document.querySelector('iframe').offsetWidth;
 
-      var iframeAdjustment = iframeWidth / 1.77777777778;
+      var iframeAdjustment = iframeWidth / 1.778;
 
       document.querySelector('iframe').style.height = iframeAdjustment + "px";
 
