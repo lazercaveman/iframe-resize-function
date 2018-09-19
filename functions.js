@@ -1,24 +1,40 @@
-
 //////
-// resize function
+// resize functions
 
-  if ( document.querySelector("iframe") !== null ) {
+if ( document.querySelector("iframe") !== null ) {
 
-    // ThisFunction will resize iframe height value related to the iframes width
-    function setIframeSize () {
+    // Iframe resizing Iframes to youtube standard size
+        function setIframeSize () {
 
-      var iframeWidth = document.querySelector('iframe').offsetWidth;
+            // Select each iframe on document
+            let eachIrame = document.querySelectorAll('iframe');
 
-      var iframeAdjustment = iframeWidth / 1.778;
+            // Set counter
+            let i = 0;
 
-      document.querySelector('iframe').style.height = iframeAdjustment + "px";
+            // Loop through each iframe
+            eachIrame.forEach( function() {
 
-    };
+                // Get iframe-width
+                let iframeWidth = eachIrame[i].offsetWidth;
 
-    // Execute function on load
-    setIframeSize();
+                // Calculate related iframe-height
+                let iframeAdjustment = iframeWidth / 1.778;
 
-    // Execute function on window resize
-    window.addEventListener("resize", setIframeSize);
+                // Set related iframe-height
+                eachIrame[i].style.height = iframeAdjustment + "px";
 
-  };
+                // Count up counter
+                ++i;
+
+            });
+
+        };
+
+        // Execute function on load
+        setIframeSize();
+
+        // Execute function on resize
+        window.addEventListener("resize", setIframeSize);
+
+};
