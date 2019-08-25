@@ -11,7 +11,7 @@ if ( document.querySelector("iframe") !== null ) {
 
             for ( let iframe of eachIframe ) {
 
-                iframe.style.width = 100 + "%";
+                // iframe.style.width = 100 + "%";
 
                 // Get iframe-width
                 let iframeWidth = iframe.offsetWidth;
