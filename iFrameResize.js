@@ -7,27 +7,21 @@ if ( document.querySelector("iframe") !== null ) {
         function setIframeSize () {
 
             // Select each iframe on document
-            let eachIrame = document.querySelectorAll('iframe');
+            let eachIframe = document.querySelectorAll('iframe');
 
-            // Set counter
-            let i = 0;
+            for ( let iframe of eachIframe ) {
 
-            // Loop through each iframe
-            eachIrame.forEach( function() {
+                iframe.style.width = 100 + "%";
 
                 // Get iframe-width
-                let iframeWidth = eachIrame[i].offsetWidth;
+                let iframeWidth = iframe.offsetWidth;
 
                 // Calculate related iframe-height
                 let iframeAdjustment = iframeWidth / 1.778;
 
                 // Set related iframe-height
-                eachIrame[i].style.height = iframeAdjustment + "px";
-
-                // Count up counter
-                ++i;
-
-            });
+                iframe.style.height = iframeAdjustment + "px";
+            }
 
         };
 
